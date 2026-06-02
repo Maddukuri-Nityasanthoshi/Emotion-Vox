@@ -1,0 +1,101 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Background with Dark Cyberpunk Theme */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: #0d0d0d; /* Deep Black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Main Container */
+.container {
+    position: relative;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent Black */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5); /* Cyan Glow */
+    text-align: center;
+    width: 90%;
+    max-width: 450px;
+    color: #00ffff; /* Neon Cyan Text */
+    backdrop-filter: blur(10px);
+}
+
+/* Title Styling */
+h1 {
+    font-size: 28px;
+    color: #00ffff;
+    text-shadow: 0px 0px 8px rgba(0, 255, 255, 1);
+}
+
+/* Subtitle */
+p {
+    font-size: 16px;
+    opacity: 0.9;
+    color: #ffffff;
+}
+
+/* File Input */
+input[type="file"] {
+    display: block;
+    margin: 15px auto;
+    background: rgba(0, 255, 255, 0.2);
+    border: 1px solid rgba(0, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Upload Button */
+button {
+    background: linear-gradient(to right, #00ffff, #0099ff);
+    color: black;
+    font-size: 16px;
+    border: none;
+    padding: 12px 20px;
+    margin-top: 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+}
+
+button:hover {
+    background: linear-gradient(to right, #0099ff, #0033ff);
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 1);
+    color: white;
+}
+
+/* Result Display */
+#result {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #00ffcc; /* Bright Cyan */
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

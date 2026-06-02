@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Emotion Recognition</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔊 AI Speech Emotion Detector</h1>
+        <p>Upload an audio file to analyze its emotion.</p>
+
+        <form id="uploadForm">
+            <input type="file" id="audioFile" accept="audio/*" required>
+            <button type="submit">Analyze Emotion</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById("uploadForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            
+            let fileInput = document.getElementById("audioFile");
+            if (!fileInput.files.length) {
+                alert("Please select an audio file.");
+                return;
+            }
+
+            let formData = new FormData();
+            formData.append("file", fileInput.files[0]);
+
+            document.getElementById("result").innerHTML = "⏳ Processing...";
+
+            try {
+                let response = await fetch("http://localhost:8501/analyze", {
+                    method: "POST",
+                    body: formData
+                });
+
+                let data = await response.json();
+                document.getElementById("result").innerHTML = `<p><strong>🎭 Detected Emotion:</strong> ${data.emotion}</p>`;
+            } catch (error) {
+                document.getElementById("result").innerHTML = "<p style='color:red;'>❌ Error analyzing file.</p>";
+            }
+        });
+    </script>
+</body>
+</html>
