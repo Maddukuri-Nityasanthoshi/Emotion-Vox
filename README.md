@@ -1,4 +1,4 @@
-# 🎙️ EmotionVox — Real-Time Speech Emotion Recognition
+# 🎙️ EmotionVox —  Real-time speech emotion recognition using Deep learning
 
 [![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)](https://python.org)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat&logo=tensorflow&logoColor=white)](https://tensorflow.org)
